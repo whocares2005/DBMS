@@ -1,0 +1,8 @@
+create trigger s1
+before
+insert on sailor
+for each row
+begin
+:new.sname := upper(:new.sname);
+end;
+/
