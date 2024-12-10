@@ -1,0 +1,10 @@
+create trigger sss1
+after
+delete on sailors
+for each row
+begin
+  if(:old.sid=22) then
+  raise_application_error(-20019,'cant delete');
+  end if;
+  end;
+  /
