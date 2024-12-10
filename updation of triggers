@@ -1,0 +1,10 @@
+create trigger ss1
+after
+update of sid on sailor
+for each row
+begin
+if(:new.sid<80) then
+raise_applicatin_error(-20017,'cant update');
+end if;
+end;
+/
